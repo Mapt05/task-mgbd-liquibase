@@ -1,0 +1,73 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 001-create-persona
+      author: estudiante
+      changes: 
+        - sqlFile:
+            path: ddl/001-create-persona.sql
+            relativeToChangelogFile: true
+
+  - changeSet:
+      id: 002-create-rol
+      author: estudiante
+      changes: 
+        - sqlFile:
+            path: ddl/002-create-rol.sql
+            relativeToChangeLogFile: true
+
+  - changeSet:
+      id: 003-create-usuario
+      author: estudiante
+      changes: 
+        - sqlFile:
+            path: ddl/003-create-usuario.sql
+            relativeToChangelogFile: true
+
+  - changeSet:
+      id: 004-create-producto
+      author: estudiante
+      changes: 
+        - sqlFile:
+            path: ddl/004-create-producto.sql
+            relativeToChangelogFile: true
+
+  - changeSet:
+      id: 005-create-factura
+      author: estudiante
+      changes: 
+        - sqlFile:
+            path: ddl/005-create-factura.sql
+            relativeToChangelogFile: true
+
+  - changeSet:
+      id: 006-create-detalle-factura
+      author: estudiante
+      changes: 
+        - sqlFile:
+            path: ddl/006-create-detalle-factura.sql
+            relativeToChangelogFile: true
+
+  - changeSet:
+      id: 007-insert-data
+      author: estudiante
+      changes:
+        - sqlFile:
+            path: dml/001-insert-data.sql
+            relativeToChangelogFile: true
+
+  - changeSet:
+      id: 008-update-data
+      author: estudiante
+      changes:
+        - sqlFile:
+            path: dml/002-update-data.sql
+            relativeToChangelogFile: true
+
+  - changeSet:
+      id: 009-delete-data
+      author: estudiante
+      changes:
+        - sqlFile:
+            path: dml/003-delete-data.sql
+            relativeToChangelogFile: true                                                         

@@ -1,0 +1,31 @@
+services:
+  db:
+    image: postgres:15
+    container_name: mgbd_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: mgbd_liquibase
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  liquibase:
+    image: liquibase/liquibase
+    container_name: mgbd_liquibase_runner
+    depends_on:
+      - db
+    volumes:
+      - .:/liquibase/changelog  
+      - ./drivers:/liquibase/lib
+    command: >
+      --url=jdbc:postgresql://db:5432/mgbd_liquibase
+      --changeLogFile=db/changelog/db.changelog-master.yaml
+      --username=postgres
+      --password=postgres
+      update
+
+volumes:
+  postgres_data:        
